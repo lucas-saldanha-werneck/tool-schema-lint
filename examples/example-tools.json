@@ -1,0 +1,15 @@
+{
+  "_note": "EXAMPLE DATA, invented for this demo. Not from any real product.",
+  "tools": [
+    {"name": "search_orders", "description": "Find orders for a customer by email address or order number.",
+     "input_schema": {"type": "object", "properties": {"query": {"type": "string", "description": "Email or order number"}}, "required": ["query"]}},
+    {"name": "lookup_orders", "description": "Find orders for a customer by email address or order number lookup.",
+     "input_schema": {"type": "object", "properties": {"query": {"type": "string", "description": "Email or order number"}}, "required": ["query"]}},
+    {"name": "run", "description": "Does things",
+     "input_schema": {"type": "object", "properties": {"mode": {"type": "string"}}}},
+    {"name": "refund_order", "description": "Refund an order in full or in part and email the customer.",
+     "input_schema": {"type": "object", "properties": {"order_id": {"type": "string", "description": "Order id"}, "amount": {"type": "number"}}, "required": ["order_id", "amount", "reason"]}},
+    {"type": "function", "function": {"name": "set_ticket", "description": "Set the status of a support ticket to a new value.",
+     "parameters": {"type": "object", "properties": {"ticket_id": {"type": "string", "description": "Ticket id"}, "status": {"type": "string", "description": "New status"}}, "required": ["ticket_id", "status"]}}}
+  ]
+}
